@@ -1,0 +1,119 @@
+.card-home {
+    position: relative;
+    overflow: hidden;
+    max-width: 90vw;
+    margin: auto;
+    display: flex;
+    padding: 50px 0px;
+    height: 600px;
+}
+
+.card-home-image {
+    position: relative;
+    display: flex;
+    width: 40%;
+}
+
+.card-home-image img {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    max-width: 435.97px;
+    max-height: 475px;
+    border-radius: 40px;
+    transform: rotate(-4.13deg);
+}
+
+.card-home .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.card-home .card-body .card-home-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-home .card-body .card-home-text h3 {
+    font-size: calc(1rem + 1.5vw);
+    font-weight: 500;
+    letter-spacing: 4px;
+    line-height: 30px;
+    padding: 5px;
+}
+
+.card-home .card-body .card-home-text h1 {
+    font-size: calc(1rem + 3.4vw);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-home .card-body .card-home-text h5 {
+    margin-top: 41px;
+    font-size: calc(1rem + 0.5vw);
+    font-weight: normal;
+}
+
+.card-home .card-body .card-form {
+    margin-top: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card-form .input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.card-form .ipnut-email {
+    border-radius: 10px;
+    border: 1px solid white;
+    height: 50px;
+    background-color: transparent;
+    width: 100%;
+    padding-left: 40px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.card-form .icon-email {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: white;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+    width: 80px;
+    height: 50px;
+    margin-left: 30px;
+    min-width: 80px;
+}
+
+.btn-icon .material-symbols-outlined.icon {
+    margin-right: auto;
+    font-size: 20px;
+    width: 100%;
+}
+
+.btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
