@@ -1,0 +1,76 @@
+@import url("../../styles/variables.css");
+
+.modal-overlay {
+    background-color: var(--background-cards-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: var(--background);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.container-modal {
+    
+}
+
+.modal:focus-visible {
+    outline: none;
+}
+
+.modal::-webkit-scrollbar {
+    width: 12px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--background-cards-shadow);
+    border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: calc(1rem + 2vw);
+    cursor: pointer;
+}
+
+.title-modal {
+    font-size: calc(1rem + 1.5vw);
+    text-align: center;
+    width: 100%;
+}
+
+.image-modal {
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+    max-height: 300px;
+    object-position: center;
+    border-radius: 10px;
+    margin: 1rem auto;
+}
