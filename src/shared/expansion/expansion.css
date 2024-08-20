@@ -1,0 +1,56 @@
+@import url('../../styles/variables.css');
+
+.expansion-container {
+    margin-top: 1rem;
+    width: 80%;
+    max-width: 28rem; /* 448px */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--background); /* Updated */
+    box-shadow: 0 4px 6px var(--background-cards-shadow); /* Updated */
+}
+
+.expansion-header {
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+    padding-top: 0.5rem; /* 8px */
+    padding-bottom: 0.5rem; /* 8px */
+    background-color: var(--background); /* Updated */
+    color: var(--white-color); /* Updated */
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.expansion-header:hover {
+    background-color: var(--background-cards); /* Updated */
+}
+
+.expansion-header:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 2px var(--background-cards-shadow); */
+}
+
+.expansion-title {
+    font-weight: 600;
+}
+
+.expansion-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.expansion-content-open {
+    max-height: 100vh;
+}
+
+.expansion-content-closed {
+    max-height: 0;
+}
+
+.expansion-body {
+    padding: 1rem; /* 16px */
+    color: var(--white-color); /* Updated */
+}

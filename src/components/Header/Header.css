@@ -1,0 +1,35 @@
+@import url("../../styles/variables.css");
+
+.header-container {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 62px;
+    width: 100vw;
+    border-bottom: 1px solid var(--background-cards);
+}
+
+.header-container nav .ul-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.header-container nav .ul-header li {
+    margin: 0px 1em;
+}
+
+.header-container nav .ul-header li a {
+    font-weight: normal;
+}
+
+.header-container nav .ul-header li a.hover\:underline:hover {
+    background-image: linear-gradient(to left, var(--gradient-color-text) 0%, var(--white-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--white-color);
+}
