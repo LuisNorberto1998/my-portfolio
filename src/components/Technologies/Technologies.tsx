@@ -14,7 +14,7 @@ export default function Technologies() {
     ];
 
     return (
-        <div className="technologies-card">
+        <div id="tecnologias" className="technologies-card">
             <div className="title-card">
                 <h1 className="gradient-text-inverse">Tecnologias</h1>
             </div>

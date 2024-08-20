@@ -1,4 +1,3 @@
-// Asegúrate de que este archivo esté marcado como un componente del cliente
 "use client";
 
 import React from "react";
@@ -7,7 +6,7 @@ import "./Home.css";
 
 const Home = () => {
     return (
-        <div className="card-home">
+        <div id="inicio" className="card-home">
             <div className="card-home-image">
                 <img src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" alt="Image profile" />
             </div>

@@ -1,14 +1,16 @@
+import './Header.css'
 import Link from 'next/link';
 
+
 const Header: React.FC = () => (
-  <header className="bg-gray-800 text-white p-4">
+  <header className="header-container">
     <nav>
-      <ul className="flex space-x-4">
-        <li><Link href="#home" className="hover:underline">Inicio</Link></li>
-        <li><Link href="#technologies" className="hover:underline">Tecnologías</Link></li>
-        <li><Link href="#projects" className="hover:underline">Proyectos</Link></li>
+      <ul className="ul-header">
+        <li><Link href="#inicio" className="hover:underline">Inicio</Link></li>
+        <li><Link href="#tecnologias" className="hover:underline">Tecnologías</Link></li>
+        <li><Link href="#proyectos" className="hover:underline">Proyectos</Link></li>
         <li><Link href="#social" className="hover:underline">Social</Link></li>
-        <li><Link href="#contact" className="hover:underline">Contacto</Link></li>
+        <li><Link href="#contacto" className="hover:underline">Contacto</Link></li>
       </ul>
     </nav>
   </header>
