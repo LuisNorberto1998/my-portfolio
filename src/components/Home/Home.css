@@ -16,11 +16,11 @@
 
 .card-home-image img {
     margin: auto;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 75%;
     max-width: 435.97px;
     max-height: 475px;
-    border-radius: 40px;
+    border-radius: 10px;
     transform: rotate(-4.13deg);
 }
 
@@ -45,7 +45,7 @@
 }
 
 .card-home .card-body .card-home-text h1 {
-    font-size: calc(1rem + 3.4vw);
+    font-size: calc(1rem + 2.5vw);
     font-weight: bold;
     margin-top: 10px;
 }
@@ -70,6 +70,7 @@
 }
 
 .card-form .ipnut-email {
+    font-size: calc(0.8rem + 0.1vw);
     border-radius: 10px;
     border: 1px solid white;
     height: 50px;
@@ -97,7 +98,7 @@
     padding: 10px 20px;
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 50px;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;

@@ -6,15 +6,6 @@ import { Typewriter } from "react-simple-typewriter";
 import "./Home.css";
 
 const Home = () => {
-    const handleType = (count: number) => {
-        // access word count number
-        console.log(count);
-    };
-
-    const handleDone = () => {
-        console.log("Done after 5 loops!");
-    };
-
     return (
         <div className="card-home">
             <div className="card-home-image">

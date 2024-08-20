@@ -34,7 +34,7 @@ body {
 }
 
 .gradient-text {
-    background-image: linear-gradient(to left, var(--gradient-color-text), var(--white-color));
+    background-image: linear-gradient(to left, var(--gradient-color-text) 0%, var(--white-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -42,7 +42,7 @@ body {
 }
 
 .gradient-text-inverse {
-    background-image: linear-gradient(to left, var(--white-color), var(--gradient-color-text));
+    background-image: linear-gradient(to left, var(--white-color) 15%, var(--gradient-color-text) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -66,4 +66,11 @@ body {
     50% {
         opacity: 0;
     }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
 }
