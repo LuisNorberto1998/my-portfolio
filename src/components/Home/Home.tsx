@@ -3,12 +3,13 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import "./Home.css";
+import Image from "next/image";
 
 const Home = () => {
     return (
         <div id="inicio" className="card-home">
             <div className="card-home-image">
-                <img src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" alt="Image profile" />
+                <Image src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" width={1000} height={1000} alt="Image profile" />
             </div>
             <div className="card-body">
                 <div className="card-home-text">

@@ -11,15 +11,16 @@ export interface Details {
     tecnhnologies?: Resources[];
 }
 
-export interface Project {
+export interface Data {
     key: string;
     name: string;
-    img: string;
+    img?: string;
+    icon?: any;
     details?: Details[];
 }
 
 export interface ModalSharedProps {
     isOpen: boolean;
     onRequestClose: () => void;
-    project: Project | null;
+    project: Data | null;
 }
