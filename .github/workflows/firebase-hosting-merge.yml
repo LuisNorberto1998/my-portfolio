@@ -16,7 +16,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: "18" # Usa la versión de Node.js que necesites
+                  node-version: "18"
 
             - name: Install dependencies
               run: npm install
@@ -29,5 +29,3 @@ jobs:
               with:
                   repoToken: ${{ secrets.GITHUB_TOKEN }}
                   firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MY_PORTFOLIO_C0A3F }}
-                  channelId: live
-                  projectId: my-portfolio-c0a3f
