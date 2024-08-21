@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
                 <div className="card-projects">
                     <Carousel responsive={responsive} ssr={true} infinite={true} autoPlay={false} keyBoardControl={true} customTransition="all 0.5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]}>
                         {projectData.map((project) => (
-                            <DataCarrousel className="card-body relative overflow-hidden duration-700 rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600" openModal={openModal} data={project} key={project.key} />
+                            <DataCarrousel key={"data-carrousel-" + project.code} className="card-body relative overflow-hidden duration-700 rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600" openModal={openModal} data={project} />
                         ))}
                     </Carousel>
                 </div>

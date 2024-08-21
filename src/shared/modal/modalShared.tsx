@@ -3,7 +3,8 @@ import ReactModal from "react-modal";
 
 import "./modalShared.css";
 
-import { Details, ModalSharedProps } from "../../types/modalShared";
+import { Details, ModalSharedProps } from "@/types/modalShared";
+
 import Expansion from "../expansion/expansion";
 import Image from "next/image";
 
@@ -17,13 +18,13 @@ const ModalShared: React.FC<ModalSharedProps> = ({ isOpen, onRequestClose, proje
                     &times;
                 </button>
                 <h2 className="gradient-text-inverse title-modal">{project.name}</h2>
-                <Image className="image-modal" src={project.img} alt={project.name + "image"} width={500} height={500} />
+                <Image className="image-modal" src={project?.img || "/images/no-image.png"} alt={project.name + "image"} width={500} height={500} />
 
                 {project.details &&
                     project.details.length > 0 &&
                     project.details.map((details: Details) => {
                         return (
-                            <Expansion key={project.key} title={details.title}>
+                            <Expansion title={details.title}>
                                 <p>{details.description}</p>
                             </Expansion>
                         );

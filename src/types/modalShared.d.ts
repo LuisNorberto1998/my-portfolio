@@ -12,10 +12,13 @@ export interface Details {
 }
 
 export interface Data {
-    key: string;
-    name: string;
+    fill?: string;
     img?: string;
+    code: string;
     icon?: any;
+    width?: number;
+    height?: number;
+    name?: string;
     details?: Details[];
 }
 
