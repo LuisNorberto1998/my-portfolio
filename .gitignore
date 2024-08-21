@@ -16,7 +16,7 @@ package-lock.json
 
 # production
 /build
-.firebase
+.firebase/
 
 # misc
 .DS_Store
