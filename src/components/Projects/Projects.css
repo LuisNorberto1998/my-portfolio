@@ -1,0 +1,92 @@
+@import url("../../styles/variables.css");
+
+.container-projects {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.container-projects .projects {
+    width: 100%;
+    margin: auto;
+}
+
+.container-projects .projects .title-projects {
+    padding: 2rem 0;
+    width: 80%;
+    margin: auto;
+}
+
+.container-projects .projects .title-projects h1 {
+    background-image: linear-gradient(to left, var(--gradient-color-text) 78%, var(--white-color) 100%);
+    font-size: calc(1rem + 2vw);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: auto;
+}
+
+.container-projects .projects .card-projects {
+    /* display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    min-height: 400px; */
+}
+.container-projects .projects .card-projects react-multi-carousel-track {
+    margin: auto;
+    padding: 0;
+}
+
+.container-projects .projects .card-projects .card-body {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 1px 20px var(--color-shadow);
+}
+
+.container-projects .projects .card-projects .card-body:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--background-cards);
+    background-color: var(--background-cards);
+}
+
+.container-projects .projects .card-projects .card-body .title {
+    font-size: calc(1rem + 0.5vw);
+    margin: 10px;
+    font-weight: normal;
+    text-align: center;
+    width: auto;
+}
+
+.container-projects .projects .card-projects .card-body .text {
+    font-size: calc(0.5rem + 0.5vw);
+    margin: 10px;
+    font-weight: normal;
+}
+
+.container-projects .projects .card-projects img {
+    width: 100%;
+    height: 240px;
+    border-radius: 10px 10px 0 0;
+}
+
+.container-projects .projects .footer-text-projects {
+    text-align: end;
+    width: 100%;
+}
+
+.container-projects .projects .footer-text-projects h3 { 
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
