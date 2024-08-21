@@ -1,14 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "fastly.picsum.photos",
-                port: "",
-                pathname: "/**",
-            },
-        ],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "fastly.picsum.photos",
+          port: "",
+          pathname: "/**",
+        },
+      ],
     },
-};
-export default nextConfig;
+    output: 'export', // Añade esta línea para soportar exportación estática
+  };
+  
+  export default nextConfig;
+  
