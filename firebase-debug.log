@@ -1,0 +1,16 @@
+[debug] [2024-08-21T07:38:24.384Z] ----------------------------------------------------------------------
+[debug] [2024-08-21T07:38:24.391Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\luis_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-08-21T07:38:24.391Z] CLI Version:   13.15.3
+[debug] [2024-08-21T07:38:24.392Z] Platform:      win32
+[debug] [2024-08-21T07:38:24.392Z] Node Version:  v20.16.0
+[debug] [2024-08-21T07:38:24.392Z] Time:          Wed Aug 21 2024 01:38:24 GMT-0600 (hora estándar central)
+[debug] [2024-08-21T07:38:24.393Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-21T07:38:24.533Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-21T07:38:24.534Z] > authorizing via signed-in user (1717110254@utectulancingo.edu.mx)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2024-08-21T07:38:24.567Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-08-21T07:38:24.567Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-08-21T07:38:24.567Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-08-21T07:38:24.574Z] [hub] writing locator at C:\Users\luis_\AppData\Local\Temp\hub-my-portfolio-c0a3f.json
+[debug] [2024-08-21T07:38:24.616Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/my-portfolio-c0a3f/sites 
