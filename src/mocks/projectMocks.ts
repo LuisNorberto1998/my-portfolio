@@ -1,10 +1,10 @@
-import { Project } from "@/types/modalShared";
+import { Data } from "@/types/modalShared";
 
-export const projectData: Project[] = [
-    { key: "1", img: "/images/citibanamex.png", name: "Citibanamex" },
-    { key: "2", img: "/images/gnp.png", name: "Portal Intermediarios" },
+export const projectData: Data[] = [
+    { code: "1", img: "/images/citibanamex.png", name: "Citibanamex" },
+    { code: "2", img: "/images/gnp.png", name: "Portal Intermediarios" },
     {
-        key: "3",
+        code: "3",
         img: "/images/aforeweb.png",
         name: "AforeWeb",
         details: [
