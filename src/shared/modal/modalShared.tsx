@@ -22,9 +22,9 @@ const ModalShared: React.FC<ModalSharedProps> = ({ isOpen, onRequestClose, proje
 
                 {project.details &&
                     project.details.length > 0 &&
-                    project.details.map((details: Details) => {
+                    project.details.map((details: Details, index: number) => {
                         return (
-                            <Expansion title={details.title}>
+                            <Expansion key={"expansion-panel-"+ index} title={details.title}>
                                 <p>{details.description}</p>
                             </Expansion>
                         );
