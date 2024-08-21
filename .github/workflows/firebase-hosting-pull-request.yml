@@ -1,41 +1,41 @@
-# Este archivo fue auto-generado por el CLI de Firebase
-# https://github.com/firebase/firebase-tools
-
 name: Deploy to Firebase Hosting on PR
 
 on:
-  pull_request:
-    branches:
-      - main  # Cambia esto a la rama base de tus PRs si es necesario
+    pull_request:
+        branches:
+            - dev
 
 permissions:
-  checks: write
-  contents: read
-  pull-requests: write
+    checks: write
+    contents: read
+    pull-requests: write
 
 jobs:
-  build_and_preview:
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
-    runs-on: ubuntu-latest
+    build_and_preview:
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Cambia esto a la versión de Node.js que necesites
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18" # Usa la versión de Node.js que necesites
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install dependencies
+              run: npm install
 
-      - name: Build project
-        run: npm run build
+            - name: Build project
+              run: npm run build
 
-      - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MY_PORTFOLIO_C0A3F }}
-          projectId: my-portfolio-c0a3f
+            - name: Export project
+              run: npm run export
+
+            - name: Deploy to Firebase Hosting
+              uses: FirebaseExtended/action-hosting-deploy@v0
+              with:
+                  repoToken: ${{ secrets.GITHUB_TOKEN }}
+                  firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MY_PORTFOLIO_C0A3F }}
+                  projectId: my-portfolio-c0a3f
