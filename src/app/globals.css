@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
 @import url("../styles/variables.css");
+@import url("../styles/skeleton.css");
 
 @tailwind base;
 @tailwind components;
@@ -68,6 +69,25 @@ body {
     }
 }
 
+@keyframes pulse {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.skeleton-animation {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -79,4 +99,3 @@ body {
     cursor: pointer;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
 }
-

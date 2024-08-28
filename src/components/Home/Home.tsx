@@ -30,7 +30,7 @@ const Home = () => {
     const technologies = [
         { code: "0", icon: <Github width={52.5} height={55} fill={hovered === "Github" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Github" },
         { code: "1", icon: <Linkedin width={56} height={60} fill={hovered === "Linkedin" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Linkedin" },
-        { code: "2", icon: <DownloadFile width={60} height={65} fill={hovered === "DownloadFile" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "DownloadFile" },
+        // { code: "2", icon: <DownloadFile width={60} height={65} fill={hovered === "DownloadFile" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "DownloadFile" },
     ];
 
     return (
@@ -71,9 +71,6 @@ const Home = () => {
                         </button>
                         <button className="btn-icon">
                             <span className="material-symbols-outlined icon">content_copy</span>
-                        </button>
-                        <button className="btn-icon">
-                            <span className="material-symbols-outlined icon">download</span>
                         </button>
                     </div>
                 </div>

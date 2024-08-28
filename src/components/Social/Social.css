@@ -1,0 +1,50 @@
+@import url("../../styles/variables.css");
+
+.timeline-container {
+    background-color: var(--background-cards);
+}
+
+.timeline-container .vertical-timeline-element--work {
+}
+
+.timeline-container .vertical-timeline::before {
+    background: var(--background);
+}
+
+.vertical-timeline--title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(1rem + 1.2vw);
+}
+
+.vertical-timeline--subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(0.7rem + 0.6vw);
+    font-weight: 500;
+}
+
+.truncate-text .expand-collapse-button {
+    font-size: calc(0.4rem + 0.4vw);
+}
+
+.truncate-text .icon-list {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+}
+
+.truncate-text .icon-list img {
+    margin: 5px;
+}
+
+.vertical-timeline--p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(0.5rem + 0.4vw) !important;
+    font-weight: lighter !important;
+    white-space: pre-wrap;
+    text-align: justify;
+    padding-left: 3px;
+}
+
+.vertical-timeline--p h4 {
+    font-weight: bold !important;
+}
