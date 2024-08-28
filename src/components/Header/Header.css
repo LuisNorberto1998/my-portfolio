@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     height: 62px;
-    width: 100vw;
+    width: auto;
     border-bottom: 1px solid var(--background-cards);
 }
 
@@ -32,4 +32,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: var(--white-color);
+}
+
+@media (max-width: 767px) {
+    .header-container {
+        width: 80%;
+        display: none;
+    }
 }

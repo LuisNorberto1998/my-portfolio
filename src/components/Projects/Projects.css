@@ -23,7 +23,7 @@
 
 .container-projects .projects .title-projects h1 {
     background-image: linear-gradient(to left, var(--gradient-color-text) 78%, var(--white-color) 100%);
-    font-size: calc(1rem + 2vw);
+    font-size: calc(0.9rem + 2vw);
     font-weight: bold;
     letter-spacing: 5px;
     margin: auto;
@@ -36,14 +36,16 @@
     width: 100%;
     min-height: 400px; */
 }
-.container-projects .projects .card-projects react-multi-carousel-track {
+
+.container-projects .projects .card-projects .react-multi-carousel-track {
     margin: auto;
     padding: 0;
+    justify-content: space-around;
 }
 
 .container-projects .projects .card-projects .card-body {
     width: 100%;
-    max-width: 280px;
+    max-width: 70%;
     height: auto;
     margin: 3rem auto;
     position: relative;
@@ -55,7 +57,7 @@
 .container-projects .projects .card-projects .card-body:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px var(--background-cards);
-    background-color: var(--background-cards);
+    /* background-color: var(--background-cards); */
 }
 
 .container-projects .projects .card-projects .card-body .title {

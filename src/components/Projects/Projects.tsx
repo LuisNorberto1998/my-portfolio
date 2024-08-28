@@ -51,7 +51,7 @@ const Projects: React.FC = () => {
                     <h1 className="gradient-text">Proyectos</h1>
                 </div>
                 <div className="card-projects">
-                    <Carousel responsive={responsive} ssr={true} infinite={true} autoPlay={false} keyBoardControl={true} customTransition="all 0.5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]}>
+                    <Carousel responsive={responsive} ssr={true} infinite={true} autoPlay={true} keyBoardControl={true} customTransition="all 0.5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]}>
                         {projectData.map((project) => (
                             <DataCarrousel key={"data-carrousel-" + project.code} className="card-body relative overflow-hidden duration-700 rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600" openModal={openModal} data={project} />
                         ))}
