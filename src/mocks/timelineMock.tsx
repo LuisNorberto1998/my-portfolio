@@ -32,7 +32,7 @@ export const timeline: DataTimeline[] = [
             "• Administración de base de datos SQL Server (Creación de tablas Procedimientos Almacenados, Diccionario de Datos).\n",
             "• Empleo IBM WebSphere® Liberty como servidor de aplicaciones en el backend y Postman para pruebas.\n",
         ],
-        tools: "Angular, Bootstrap, Java, Typescript, Visual Studio Code, Postman, DBeaver, Oracle SQL Developer, Jira, Git, Sonar, Bitbucket, HTML, CSS, Tomcat, Eclipse, WebSphere Liberty, Angular Material, Spring Boot.",
+        tools: "Angular, Bootstrap, Java, Typescript, Visual Studio Code, Postman, DBeaver, Oracle SQL Developer, Jira, Git, Sonar, Bitbucket, HTML, CSS, Tomcat, Eclipse, WebSphere Liberty, Angular Material, Spring Boot",
     },
     {
         key: 1,
@@ -47,7 +47,7 @@ export const timeline: DataTimeline[] = [
             "• Desarrollo de servicios REST con Java.\n",
             "• Configuración de herramientas como Widfly y Maven en entornos de desarrollo.\n",
         ],
-        tools: "Angular, Java, Visual Studio Code, Jira, Oracle SQL Developer, TypeScript, Git, jQuery, Sonar, HTML, CSS, SASS, SCSS, Bootstrap, Angular Material , Spring Boot.",
+        tools: "Angular, Java, Visual Studio Code, Jira, Oracle SQL Developer, TypeScript, Git, jQuery, Sonar, HTML, CSS, SASS, SCSS, Bootstrap, Angular Material, Spring Boot",
     },
     {
         key: 2,
@@ -63,7 +63,7 @@ export const timeline: DataTimeline[] = [
             "• Refactorización de código y pruebas con Sonar.\n",
             "• Manejo de incidencias y entregables mediante Jira.\n",
         ],
-        tools: "Angular, NPM, Visual Studio Code, Router, Ajax, Jira, Git, Gitlab, Angular Material, Bootstrap, HTML, CSS, Typescript, Sonar.",
+        tools: "Angular, NPM, Visual Studio Code, Router, Ajax, Jira, Git, Gitlab, Angular Material, Bootstrap, HTML, CSS, Typescript, Sonar",
     },
     {
         key: 3,
@@ -81,7 +81,7 @@ export const timeline: DataTimeline[] = [
             "• Implementación de React Hook Form para la validación de formularios y diseño responsivo.\n",
             "• Implementación de Prime React para la construcción de componentes.\n",
         ],
-        tools: "React.js, NPM, Visual Studio Code, Redux, Hooks, Jira, Spiratest, GitLab, Jest, Pruebas unitarias, Sonar.",
+        tools: "React.js, NPM, Visual Studio Code, Redux, Hooks, Jira, Spiratest, GitLab, Jest, Pruebas unitarias, Sonar",
     },
     {
         key: 4,
@@ -97,6 +97,6 @@ export const timeline: DataTimeline[] = [
             "• Refactorización de código y pruebas con Sonar.\n",
             "• Manejo de incidencias y entregables mediante Jira.\n",
         ],
-        tools: "Java, Git, Gitlab, Oracle SQL Developer, TypeScript, Angular, Bootstrap, HTML, CSS, Visual Studio Code, Tomcat, Eclipse.",
+        tools: "Java, Git, Gitlab, Oracle SQL Developer, TypeScript, Angular, Bootstrap, HTML, CSS, Visual Studio Code, Tomcat, Eclipse",
     },
 ];

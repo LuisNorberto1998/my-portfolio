@@ -23,6 +23,7 @@ const TimelineItem: React.FC<TruncatedTextProps> = ({ item, isExpanded, onExpand
                     <h3 className="gradient-text vertical-timeline--title">{item.title}</h3>
                     {item.subtitle && <h4 className="gradient-text-inverse vertical-timeline--subtitle">{item.subtitle}</h4>}
                     <TruncatedText key={`truncated-text-${item.key}`} item={item} isExpanded={isExpanded} onExpand={onExpand} />
+                    {item.tools.length > 0 && <IconsTimeline key={`icons-timeline-${item.key}`} item={item} />}
                 </div>
             )}
         </VerticalTimelineElement>
@@ -52,9 +53,38 @@ const normalizeIconName = (name: string): string => {
 };
 
 const TruncatedText: React.FC<TruncatedTextProps> = ({ item, isExpanded, onExpand }) => {
+    const { tools, desc, key } = item;
+
+    const combinedText = `${desc ? desc + " " : ""}${tools || ""}`;
+
+    return (
+        <div key={`truncated-text-item${key}`} className="truncate-text">
+            <p className="vertical-timeline--p">
+                {isExpanded ? (
+                    <div>
+                        {desc && <p className="vertical-timeline--p">{desc}</p>}
+                        {tools && (
+                            <p className="vertical-timeline--p">
+                                <h4>Herramientas:</h4>
+                                {tools}
+                            </p>
+                        )}
+                    </div>
+                ) : (
+                    `${combinedText.substring(0, 95)}...`
+                )}
+            </p>
+            <button className="expand-collapse-button" onClick={onExpand}>
+                {isExpanded ? "Ver menos" : "Ver más"}
+            </button>
+        </div>
+    );
+};
+
+const IconsTimeline: React.FC<TruncatedTextProps> = ({ item }) => {
     const [icons, setIcons] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
-    const { tools, desc, key } = item;
+    const { tools } = item;
 
     useEffect(() => {
         if (tools) {
@@ -81,31 +111,7 @@ const TruncatedText: React.FC<TruncatedTextProps> = ({ item, isExpanded, onExpan
         }
     }, [tools]);
 
-    const combinedText = `${desc ? desc + " " : ""}${tools || ""}`;
-
-    return (
-        <div key={`truncated-text-item${key}`} className="truncate-text">
-            <p className="vertical-timeline--p">
-                {isExpanded ? (
-                    <div>
-                        {desc && <p className="vertical-timeline--p">{desc}</p>}
-                        {tools && (
-                            <p className="vertical-timeline--p">
-                                <h4>Herramientas:</h4>
-                                {tools}
-                            </p>
-                        )}
-                    </div>
-                ) : (
-                    `${combinedText.substring(0, 95)}...`
-                )}
-            </p>
-            <button className="expand-collapse-button" onClick={onExpand}>
-                {isExpanded ? "Ver menos" : "Ver más"}
-            </button>
-            <div className="icon-list">{loading ? tools?.split(",").map((_, index) => <Skeleton key={`skeleton-${_}-tool`} count={1} inline width={24} height={24} circle={true} className="skeleton-animation" />) : icons.map((icon, index) => <Image key={`svg-tool-icon-loaded-${icon}`} src={icon} alt={`Icon ${index}`} width={24} height={24} />)}</div>
-        </div>
-    );
+    return <div className="icon-list">{loading ? tools?.split(",").map((_) => <Skeleton key={`skeleton-${_}-tool`} count={1} inline width={24} height={24} circle={true} className="skeleton-animation" />) : icons.map((icon, index) => <Image key={`svg-tool-icon-loaded-${icon}`} src={icon} alt={`Icon ${index}`} width={24} height={24} />)}</div>;
 };
 
 export default Social;

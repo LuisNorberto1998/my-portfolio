@@ -22,18 +22,18 @@
     font-weight: 500;
 }
 
-.truncate-text .expand-collapse-button {
-    font-size: calc(0.4rem + 0.4vw);
-}
-
-.truncate-text .icon-list {
+.vertical-timeline-element--work .icon-list {
     display: flex;
     flex-direction: row;
     margin: 1rem 0;
 }
 
-.truncate-text .icon-list img {
+.vertical-timeline-element--work .icon-list img {
     margin: 5px;
+}
+
+.truncate-text .expand-collapse-button {
+    font-size: calc(0.4rem + 0.4vw);
 }
 
 .vertical-timeline--p {

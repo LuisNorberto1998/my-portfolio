@@ -18,6 +18,6 @@ export interface IconTimeline {
 
 export interface TruncatedTextProps {
     item: DataTimeline
-    isExpanded: boolean;
-    onExpand: () => void;
+    isExpanded?: boolean;
+    onExpand?: () => void;
 }
