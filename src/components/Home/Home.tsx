@@ -1,17 +1,20 @@
 "use client";
 
 import "./Home.css";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 import { Typewriter } from "react-simple-typewriter";
+import { toast } from "react-toastify";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
+
 import Github from "../../../public/components/github";
 import Linkedin from "../../../public/components/linkedin";
-import DownloadFile from "../../../public/components/download_doc";
+import Tooltip from "@/shared/tooltip/Tooltip";
 
 const Home = () => {
     const [hovered, setHovered] = useState<string | null>(null);
+    const emailInputRef = useRef<HTMLInputElement>(null);
 
     const [cssVariables, setCssVariables] = useState<{ whiteColor: string; gradientColorText: string }>({
         whiteColor: "#FFFFFF",
@@ -28,20 +31,39 @@ const Home = () => {
     }, []);
 
     const technologies = [
-        { code: "0", icon: <Github width={52.5} height={55} fill={hovered === "Github" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Github" },
-        { code: "1", icon: <Linkedin width={56} height={60} fill={hovered === "Linkedin" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Linkedin" },
-        // { code: "2", icon: <DownloadFile width={60} height={65} fill={hovered === "DownloadFile" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "DownloadFile" },
+        { code: "0", url: "https://github.com/LuisNorberto1998", icon: <Github width={52.5} height={55} fill={hovered === "Github" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Github" },
+        { code: "1", url: "https://www.linkedin.com/in/luis-norberto-paloma-rodriguez/", icon: <Linkedin width={56} height={60} fill={hovered === "Linkedin" ? cssVariables.gradientColorText : cssVariables.whiteColor} />, name: "Linkedin" },
     ];
+
+    const handleClick = (url: string) => {
+        window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    const handleCopyEmail = async () => {
+        if (emailInputRef.current) {
+            try {
+                await navigator.clipboard.writeText(emailInputRef.current.value);
+                toast.success("Correo copiado al portapapeles");
+            } catch (err) {
+                toast.error("Error al copiar al portapapeles");
+            }
+        }
+    };
+
+    const handleSendEmail = () => {
+        const email = emailInputRef.current ? emailInputRef.current.value : "";
+        window.location.href = `mailto:${email}`;
+    };
 
     return (
         <div id="inicio">
             <div className="card-home">
                 <div className="card-home-image">
-                    <Image src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" width={1000} height={1000} alt="Image profile" />
+                    <Image src="/images/norberto.jpeg" width={1000} height={1000} alt="Image profile" />
 
                     <div className="card-home-social">
                         {technologies.map((tech) => (
-                            <button key={tech.code} className="btn-icon-wrapper" onMouseEnter={() => setHovered(tech.name)} onMouseLeave={() => setHovered(null)}>
+                            <button key={tech.code} onClick={() => handleClick(tech.url)} className="btn-icon-wrapper" onMouseEnter={() => setHovered(tech.name)} onMouseLeave={() => setHovered(null)}>
                                 {tech.icon}
                             </button>
                         ))}
@@ -63,15 +85,23 @@ const Home = () => {
                     </div>
                     <div className="card-form">
                         <div className="input-wrapper">
-                            <input className="ipnut-email" type="email" placeholder="luis_norberto1998@hotmail.com" disabled={true} />
+                            <input className="ipnut-email" type="email" ref={emailInputRef} value={"luis_norberto1998@hotmail.com"} placeholder="luis_norberto1998@hotmail.com" disabled={true} />
                             <span className="material-symbols-outlined icon-email">mail</span>
                         </div>
-                        <button className="btn-icon">
-                            <span className="material-symbols-outlined icon">send</span>
-                        </button>
-                        <button className="btn-icon">
-                            <span className="material-symbols-outlined icon">content_copy</span>
-                        </button>
+
+                        <div className="buttons-home">
+                            <Tooltip message="Enviar correo">
+                                <button onClick={handleSendEmail} className="btn-icon">
+                                    <span className="material-symbols-outlined icon">send</span>
+                                </button>
+                            </Tooltip>
+
+                            <Tooltip message="Copiar correo">
+                                <button onClick={handleCopyEmail} className="btn-icon">
+                                    <span className="material-symbols-outlined icon">content_copy</span>
+                                </button>
+                            </Tooltip>
+                        </div>
                     </div>
                 </div>
             </div>

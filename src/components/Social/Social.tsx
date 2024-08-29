@@ -23,7 +23,7 @@ const TimelineItem: React.FC<TruncatedTextProps> = ({ item, isExpanded, onExpand
                     <h3 className="gradient-text vertical-timeline--title">{item.title}</h3>
                     {item.subtitle && <h4 className="gradient-text-inverse vertical-timeline--subtitle">{item.subtitle}</h4>}
                     <TruncatedText key={`truncated-text-${item.key}`} item={item} isExpanded={isExpanded} onExpand={onExpand} />
-                    {item.tools.length > 0 && <IconsTimeline key={`icons-timeline-${item.key}`} item={item} />}
+                    {item.tools && item.tools.length > 0 && <IconsTimeline key={`icons-timeline-${item.key}`} item={item} />}
                 </div>
             )}
         </VerticalTimelineElement>
@@ -38,7 +38,7 @@ const Social: React.FC = () => {
     };
 
     return (
-        <div className="timeline-container">
+        <div id="experiencia" className="timeline-container">
             <VerticalTimeline animate={true}>
                 {timeline.map((item, index) => (
                     <TimelineItem key={item.key} item={item} isExpanded={expandedId === `truncate-id-${item.key}`} onExpand={() => handleExpand(`truncate-id-${item.key}`)} />
@@ -56,6 +56,10 @@ const TruncatedText: React.FC<TruncatedTextProps> = ({ item, isExpanded, onExpan
     const { tools, desc, key } = item;
 
     const combinedText = `${desc ? desc + " " : ""}${tools || ""}`;
+
+    if (!item.desc || !item.tools) {
+        return null;
+    }
 
     return (
         <div key={`truncated-text-item${key}`} className="truncate-text">
@@ -85,17 +89,15 @@ const IconsTimeline: React.FC<TruncatedTextProps> = ({ item }) => {
     const [icons, setIcons] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
     const { tools } = item;
-    
-    // Lista de iconos a omitir
-    const omitIcons = new Set<string>(["Tomcat", "WebSphere Liberty", "Angular Material", "SCSS", "Router", "Ajax", "Hooks", "Pruebas unitarias", "Spiratest" ]); // Agrega los nombres de los iconos que deseas omitir
-    
+
+    const [omitIcons] = useState(new Set<string>(["Tomcat", "WebSphere Liberty", "Angular Material", "SCSS", "Router", "Ajax", "Hooks", "Pruebas unitarias", "Spiratest"]));
+
     useEffect(() => {
         if (tools) {
             const toolList = tools.split(",").map((tool) => tool.trim());
-    
-            // Filtrar herramientas que no tienen icono asociado
-            const filteredToolList = toolList.filter(tool => !omitIcons.has(tool));
-    
+
+            const filteredToolList = toolList.filter((tool) => !omitIcons.has(tool));
+
             const iconPromises = filteredToolList.map(async (tool) => {
                 const iconName = normalizeIconName(tool);
                 const iconUrl = `/svg/${iconName}.svg`;
@@ -104,28 +106,23 @@ const IconsTimeline: React.FC<TruncatedTextProps> = ({ item }) => {
                     if (response.ok) {
                         return iconUrl;
                     } else {
-                        // Agrega la herramienta a la lista de omisiones si no se encuentra el icono
                         omitIcons.add(tool);
                         return null;
                     }
                 } catch (error) {
-                    // Agrega la herramienta a la lista de omisiones si hay un error
                     omitIcons.add(tool);
                     return null;
                 }
             });
-    
+
             Promise.all(iconPromises).then((results) => {
                 setIcons(results.filter((icon) => icon !== null) as string[]);
                 setLoading(false);
             });
         }
-    }, [tools]);
+    }, [tools, omitIcons]);
 
-    console.log(icons);
-    
-
-    return <div className="icon-list">{loading ? tools?.split(",")?.map((_) => <Skeleton key={`skeleton-${_}-tool`} count={1} inline width={24} height={24} circle={true} className="skeleton-animation" />) : icons.map((icon, index) => <Image key={`svg-tool-icon-loaded-${icon}`} src={icon} alt={`Icon${icon} ${index}`} width={24} height={24} />)}</div>;
+    return <div className="icon-list">{loading ? tools?.split(",")?.map((tool, index) => <Skeleton key={`skeleton-${tool}-tool`} count={1} inline width={24} height={24} circle={true} className="skeleton-animation" />) : icons.map((icon, index) => <Image className="card-body" key={`svg-tool-icon-loaded-${icon}`} src={icon} alt={`Icon ${icon} ${index}`} width={24} height={24} />)}</div>;
 };
 
 export default Social;

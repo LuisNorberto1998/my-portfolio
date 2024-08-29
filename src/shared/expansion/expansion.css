@@ -35,6 +35,7 @@
 
 .expansion-title {
     font-weight: 600;
+    font-size: calc(1rem + 0.8vw);
 }
 
 .expansion-content {

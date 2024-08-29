@@ -4,9 +4,6 @@
     background-color: var(--background-cards);
 }
 
-.timeline-container .vertical-timeline-element--work {
-}
-
 .timeline-container .vertical-timeline::before {
     background: var(--background);
 }
@@ -23,9 +20,11 @@
 }
 
 .vertical-timeline-element--work .icon-list {
-    display: flex;
     flex-direction: row;
-    margin: 1rem 0;
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 2px;
 }
 
 .vertical-timeline-element--work .icon-list img {
@@ -34,6 +33,7 @@
 
 .truncate-text .expand-collapse-button {
     font-size: calc(0.4rem + 0.4vw);
+    color: var(--gradient-color-text);
 }
 
 .vertical-timeline--p {
@@ -47,4 +47,21 @@
 
 .vertical-timeline--p h4 {
     font-weight: bold !important;
+}
+
+.icon-list .card-body {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .vertical-timeline-element--work .icon-list {
+        flex-direction: row;
+        margin: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2px;
+    }
 }

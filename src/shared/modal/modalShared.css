@@ -28,10 +28,6 @@
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
-.container-modal {
-    
-}
-
 .modal:focus-visible {
     outline: none;
 }
@@ -65,6 +61,13 @@
     width: 100%;
 }
 
+.expansion-panel-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(0.6rem + 0.6vw);
+    text-align: left;
+    width: 100%;
+}
+
 .image-modal {
     object-fit: cover;
     width: 80%;
@@ -73,4 +76,31 @@
     object-position: center;
     border-radius: 10px;
     margin: 1rem auto;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    color: var(--white-color);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    
+    background-color: var(--background-cards-shadow);
+}
+
+.btn-secondary {
+    
+    background-color: transparent;
+    border: 1px solid  var(--background-cards-shadow);
 }

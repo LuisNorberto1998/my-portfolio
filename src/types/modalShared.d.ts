@@ -20,6 +20,8 @@ export interface Data {
     height?: number;
     name?: string;
     details?: Details[];
+    linkCode?: string;
+    linkPage?: string;
 }
 
 export interface ModalSharedProps {

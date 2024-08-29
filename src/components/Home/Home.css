@@ -18,15 +18,27 @@
     width: 40%;
 }
 
-.card-home-image img {
+/* .card-home-image img {
     margin: auto;
     width: 90%;
     height: 75%;
     max-width: 435.97px;
     max-height: 475px;
-    border-radius: 50%;
+    border-radius: 10px;
     border: 3px solid var(--white-color);
-    /* transform: rotate(-4.13deg); */
+    transform: rotate(-4.13deg);
+} */
+
+.card-home-image img {
+    margin: auto;
+    width: 80%; /* O un valor fijo como 300px */
+    height: 80%; /* Asegúrate de que coincida con el width */
+    max-width: 435.97px;
+    max-height: 435.97px; /* Cambiar max-height para igualarlo con max-width */
+    border-radius: 50%; /* Esto hará que la imagen sea circular */
+    border: 3px solid var(--white-color);
+    transform: rotate(-4.13deg);
+    object-fit: cover; /* Esto se asegura de que la imagen no se distorsione */
 }
 
 .card-home .card-body {
@@ -96,6 +108,12 @@
     pointer-events: none;
 }
 
+.card-form .buttons-home {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
 .btn-icon {
     display: flex;
     align-items: center;
@@ -107,10 +125,9 @@
     color: var(--white-color);
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 10px 0;
+    margin: 10px;
     width: 80px;
     height: 50px;
-    margin-left: 30px;
     min-width: 80px;
 }
 
@@ -189,10 +206,18 @@
         width: 100%;
     }
 
-    .btn-icon {
-        margin: 20px auto 0px auto;
+    .card-form .buttons-home {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         width: 100%;
-        min-width: 100%;
+    }
+
+    .btn-icon {
+        margin: 20px auto;
+        width: 100%;
+        min-width: max-content;
     }
 
     .btn-icon:hover {

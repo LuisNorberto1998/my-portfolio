@@ -1,7 +1,7 @@
 import { DataTimeline, IconTimeline } from "@/types/timeline";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faSchool } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faHourglassEnd, faHourglassStart } from "@fortawesome/free-solid-svg-icons";
 
 const getCssVariable = (variable: string) => {
     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
@@ -12,14 +12,26 @@ export const workIcon: IconTimeline = {
     iconStyle: { background: "#0f0715", color: "#fff" },
 };
 
-const schoolIcon: IconTimeline = {
-    icon: <FontAwesomeIcon icon={faSchool} />,
+const endIcon: IconTimeline = {
+    icon: <FontAwesomeIcon icon={faHourglassEnd} />,
+    iconStyle: { background: "#0f0715", color: "#fff" },
+};
+
+const startIcon: IconTimeline = {
+    icon: <FontAwesomeIcon icon={faHourglassStart} />,
     iconStyle: { background: "#0f0715", color: "#fff" },
 };
 
 export const timeline: DataTimeline[] = [
-    {
+    {   
         key: 0,
+        icon: endIcon,
+        title: 'Experiencia',
+        subtitle: 'IDS COMERCIAL S.A DE C.V',
+        date: 'Termino: Julio 2024'
+    },
+    {
+        key: 1,
         icon: workIcon,
         date: "DICIEMBRE 2022 - JUNIO 2024",
         title: "Frontend Developer",
@@ -35,7 +47,7 @@ export const timeline: DataTimeline[] = [
         tools: "Angular, Bootstrap, Java, Typescript, Visual Studio Code, Postman, DBeaver, Oracle SQL Developer, Jira, Git, Sonar, Bitbucket, HTML, CSS, Tomcat, Eclipse, WebSphere Liberty, Angular Material, Spring Boot",
     },
     {
-        key: 1,
+        key: 2,
         icon: workIcon,
         date: "SEPTTIEMBRE 2022 – DICIEMBRE 2022",
         title: "Frontend Developer",
@@ -50,7 +62,7 @@ export const timeline: DataTimeline[] = [
         tools: "Angular, Java, Visual Studio Code, Jira, Oracle SQL Developer, TypeScript, Git, jQuery, Sonar, HTML, CSS, SASS, SCSS, Bootstrap, Angular Material, Spring Boot",
     },
     {
-        key: 2,
+        key: 3,
         icon: workIcon,
         date: "FEBRERO 2022 – SEPTIEMBRE 2022",
         title: "Frontend Developer",
@@ -66,7 +78,7 @@ export const timeline: DataTimeline[] = [
         tools: "Angular, NPM, Visual Studio Code, Router, Ajax, Jira, Git, Gitlab, Angular Material, Bootstrap, HTML, CSS, Typescript, Sonar",
     },
     {
-        key: 3,
+        key: 4,
         icon: workIcon,
         date: "ABRIL 2021 – ABRIL 2022",
         title: "Frontend Developer",
@@ -84,8 +96,8 @@ export const timeline: DataTimeline[] = [
         tools: "React.js, NPM, Visual Studio Code, Redux, Hooks, Jira, Spiratest, GitLab, Jest, Pruebas unitarias, Sonar",
     },
     {
-        key: 4,
-        icon: schoolIcon,
+        key: 5,
+        icon: workIcon,
         date: "DICIEMBRE 2020 – ABRIL 2021",
         title: "Frontend Developer",
         subtitle: "Proyecto: iAfore",
@@ -98,5 +110,12 @@ export const timeline: DataTimeline[] = [
             "• Manejo de incidencias y entregables mediante Jira.\n",
         ],
         tools: "Java, Git, Gitlab, Oracle SQL Developer, TypeScript, Angular, Bootstrap, HTML, CSS, Visual Studio Code, Tomcat, Eclipse",
+    },
+    {   
+        key: 6,
+        icon: startIcon,
+        title: 'IDS COMERCIAL S.A DE C.V',
+        subtitle: '',
+        date: 'Inicio: Diciembre 2020'
     },
 ];

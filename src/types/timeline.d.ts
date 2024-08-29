@@ -4,8 +4,8 @@ export interface DataTimeline {
     date: string;
     title: string;
     subtitle: string;
-    desc: string[];
-    tools: string;
+    desc?: string[];
+    tools?: string;
 }
 
 export interface IconTimeline {

@@ -1,0 +1,17 @@
+@import url("../../styles/variables.css");
+
+.footer-style {
+    background-color: var(--background);
+    border-top: 1px solid var(--color-shadow);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: calc(0.6rem + 0.4vw);
+}
+
+@media (max-width: 450px) {
+    .footer-style {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

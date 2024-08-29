@@ -4,12 +4,15 @@
     background-color: var(--background);
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: fixed; /* Cambiado a fixed para que permanezca fijo */
+    top: 0; /* Posiciona el header en la parte superior */
+    left: 0; /* Asegura que esté alineado con la izquierda */
     justify-content: center;
     align-items: center;
     height: 62px;
-    width: auto;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
     border-bottom: 1px solid var(--background-cards);
+    z-index: 1000; 
 }
 
 .header-container nav .ul-header {

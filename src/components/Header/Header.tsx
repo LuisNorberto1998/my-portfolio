@@ -9,8 +9,7 @@ const Header: React.FC = () => (
         <li><Link href="#inicio" className="hover:underline">Inicio</Link></li>
         <li><Link href="#tecnologias" className="hover:underline">Tecnologías</Link></li>
         <li><Link href="#proyectos" className="hover:underline">Proyectos</Link></li>
-        <li><Link href="#social" className="hover:underline">Social</Link></li>
-        <li><Link href="#contacto" className="hover:underline">Contacto</Link></li>
+        <li><Link href="#experiencia" className="hover:underline">Social</Link></li>
       </ul>
     </nav>
   </header>

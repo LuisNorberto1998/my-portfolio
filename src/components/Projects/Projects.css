@@ -57,11 +57,10 @@
 .container-projects .projects .card-projects .card-body:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px var(--background-cards);
-    /* background-color: var(--background-cards); */
 }
 
 .container-projects .projects .card-projects .card-body .title {
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(0.7rem + 0.5vw);
     margin: 10px;
     font-weight: normal;
     text-align: center;
@@ -85,10 +84,16 @@
     width: 100%;
 }
 
-.container-projects .projects .footer-text-projects h3 { 
+.container-projects .projects .footer-text-projects h3 {
     width: 90%;
     margin: auto;
     display: flex;
     justify-content: end;
     cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .container-projects .projects .card-projects .card-body:hover {
+        transform: none;
+    }
 }
